@@ -93,7 +93,8 @@ form {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.5rem);
 }
 
 label {
@@ -101,17 +102,20 @@ label {
   display: inline-block;
   width: calc(24 / 16 * 1rem);
   aspect-ratio: 1;
-  background-color: rgba(211, 198, 198, 0.5);
+  background-color: rgb(211, 198, 198, 0.25);
   border-radius: 50%;
   transition: background-color 0.5s ease-in-out;
 }
 
-label:hover,
+label:hover {
+  background-color: rgb(211, 198, 198, 0.5);
+}
+
 input[type="radio"]#image-1:checked ~ form label[for="image-1"],
 input[type="radio"]#image-2:checked ~ form label[for="image-2"],
 input[type="radio"]#image-3:checked ~ form label[for="image-3"],
 input[type="radio"]#image-4:checked ~ form label[for="image-4"],
 input[type="radio"]#image-5:checked ~ form label[for="image-5"],
 input[type="radio"]#image-6:checked ~ form label[for="image-6"] {
-  background-color: rgb(211, 198, 198);
+  background-color: rgb(211, 198, 198, 0.75);
 }
