@@ -6,8 +6,9 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding-inline: 1rem;
-  padding-block: 10%;
 }
 
 #image-slider {
@@ -20,6 +21,7 @@ body {
 #image-slider,
 [class^="image-"] {
   width: 100%;
+  max-width: calc(400 / 16 * 1rem);
 }
 
 [class^="image-"] {
