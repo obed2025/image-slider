@@ -28,12 +28,10 @@ body {
   aspect-ratio: 16 / 9;
   font-size: 2rem;
   font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(211, 198, 198);
   flex-shrink: 0;
   transition: transform 0.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
 }
 
 .image-1 {
