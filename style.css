@@ -1,7 +1,3 @@
-html {
-  color-scheme: dark;
-}
-
 body {
   margin: 0;
   display: flex;
@@ -16,6 +12,7 @@ body {
   overflow: hidden;
   border-radius: 0.5rem;
   position: relative;
+  box-shadow: 0 1rem 2rem black;
 }
 
 #image-slider,
@@ -93,8 +90,9 @@ form {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(0.5rem);
+  border-top: 0.25rem solid rebeccapurple;
 }
 
 label {
@@ -102,13 +100,9 @@ label {
   display: inline-block;
   width: calc(24 / 16 * 1rem);
   aspect-ratio: 1;
-  background-color: rgb(211, 198, 198, 0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 50%;
-  transition: background-color 0.5s ease-in-out;
-}
-
-label:hover {
-  background-color: rgb(211, 198, 198, 0.5);
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 input[type="radio"]#image-1:checked ~ form label[for="image-1"],
@@ -117,5 +111,28 @@ input[type="radio"]#image-3:checked ~ form label[for="image-3"],
 input[type="radio"]#image-4:checked ~ form label[for="image-4"],
 input[type="radio"]#image-5:checked ~ form label[for="image-5"],
 input[type="radio"]#image-6:checked ~ form label[for="image-6"] {
-  background-color: rgb(211, 198, 198, 0.75);
+  background-color: transparent;
+  animation: box-shadow 0.75s linear infinite forwards;
+  box-shadow: 0 0 0.125rem 0.25rem rebeccapurple;
+}
+
+@media (hover: hover) {
+  label:hover {
+    box-shadow: 0 0 0.25rem 0.5rem rebeccapurple;
+  }
+
+  form {
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  #image-slider:hover form {
+    transform: translateY(-25%);
+  }
+}
+
+@keyframes box-shadow {
+  50% {
+    box-shadow: 0 0 0.3rem 0.6rem rebeccapurple;
+  }
 }
