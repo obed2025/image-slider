@@ -1,0 +1,117 @@
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding-inline: 1rem;
+  padding-block: 10%;
+}
+
+#image-slider {
+  display: flex;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+#image-slider,
+[class^="image-"] {
+  width: 100%;
+}
+
+[class^="image-"] {
+  aspect-ratio: 16 / 9;
+  font-size: 2rem;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(211, 198, 198);
+  flex-shrink: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-1 {
+  background-color: rgb(131, 0, 0);
+}
+
+.image-2 {
+  background-color: rgb(0, 131, 28);
+}
+
+.image-3 {
+  background-color: rgb(131, 129, 0);
+}
+
+.image-4 {
+  background-color: rgb(7, 0, 99);
+}
+
+.image-5 {
+  background-color: rgb(99, 0, 94);
+}
+
+.image-6 {
+  background-color: rgb(0, 99, 99);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]#image-1:checked ~ [class^="image-"] {
+  transform: translateX(0);
+}
+
+input[type="radio"]#image-2:checked ~ [class^="image-"] {
+  transform: translateX(-100%);
+}
+
+input[type="radio"]#image-3:checked ~ [class^="image-"] {
+  transform: translateX(-200%);
+}
+
+input[type="radio"]#image-4:checked ~ [class^="image-"] {
+  transform: translateX(-300%);
+}
+
+input[type="radio"]#image-5:checked ~ [class^="image-"] {
+  transform: translateX(-400%);
+}
+
+input[type="radio"]#image-6:checked ~ [class^="image-"] {
+  transform: translateX(-500%);
+}
+
+form {
+  position: absolute;
+  bottom: 0;
+  padding-block: 0.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+label {
+  cursor: pointer;
+  display: inline-block;
+  width: calc(24 / 16 * 1rem);
+  aspect-ratio: 1;
+  background-color: rgba(211, 198, 198, 0.5);
+  border-radius: 50%;
+  transition: background-color 0.5s ease-in-out;
+}
+
+label:hover,
+input[type="radio"]#image-1:checked ~ form label[for="image-1"],
+input[type="radio"]#image-2:checked ~ form label[for="image-2"],
+input[type="radio"]#image-3:checked ~ form label[for="image-3"],
+input[type="radio"]#image-4:checked ~ form label[for="image-4"],
+input[type="radio"]#image-5:checked ~ form label[for="image-5"],
+input[type="radio"]#image-6:checked ~ form label[for="image-6"] {
+  background-color: rgb(211, 198, 198);
+}
